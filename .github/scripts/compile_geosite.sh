@@ -38,6 +38,12 @@ for RULE in "${RULES[@]}"; do
     REMOTE_URL="${LOYALSOLDIER_BASE_URL}/${INPUT_FILE}"
     LOCAL_PATH="/tmp/input/${INPUT_FILE}"
 
+    mkdir -p /tmp/input 
+    if [ ! -d "/tmp/input" ]; then
+        echo "FATAL ERROR: Could not create input directory /tmp/input"
+        exit 1
+    fi
+    
     echo "--- Processing ${INPUT_FILE} ---"
 
     echo "Downloading ${REMOTE_URL} to ${LOCAL_PATH}..."
