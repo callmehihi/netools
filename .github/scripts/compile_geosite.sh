@@ -1,8 +1,10 @@
 #!/bin/bash
 set -e
 
-SRSC_VERSION="0.0.1-alpha.1" 
-
+SRSC_TAG="0.0.1-alpha.1" 
+SRSC_REPO="https://github.com/SagerNet/srsc.git"
+SRSC_BUILD_DIR="/tmp/srsc_source"
+SRSC_EXECUTABLE="/tmp/srsc"
 LOYALSOLDIER_BASE_URL="https://raw.githubusercontent.com/Loyalsoldier/domain-list-custom/release"
 
 RULES=(
@@ -11,13 +13,23 @@ RULES=(
     "category-ads-all.txt:category-ads-all.srs"
 )
 
-SRSC_URL="https://github.com/SagerNet/srsc/archive/refs/tags/v${SRSC_VERSION}.tar.gz"
-echo "Downloading srsc tool from ${SRSC_URL}"
-curl -L "$SRSC_URL" | tar zx -C /tmp
 
-SRSC_PATH="/tmp/srsc-${SRSC_VERSION}"
+echo "1. Cloning srsc repository..."
+git clone --depth 1 --branch "$SRSC_TAG" "$SRSC_REPO" "$SRSC_BUILD_DIR"
 
-mkdir -p /tmp/input
+echo "2. Compiling srsc tool..."
+cd "$SRSC_BUILD_DIR"
+go build -o "$SRSC_EXECUTABLE" ./cmd/srsc
+
+cd -
+
+if [ ! -x "$SRSC_EXECUTABLE" ]; then
+    echo "Error: srsc executable not found or failed to compile at $SRSC_EXECUTABLE"
+    exit 1
+fi
+echo "srsc tool compiled successfully."
+
+
 mkdir -p release
 
 for RULE in "${RULES[@]}"; do
