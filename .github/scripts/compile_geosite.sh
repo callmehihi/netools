@@ -41,8 +41,14 @@ for RULE in "${RULES[@]}"; do
     echo "--- Processing ${INPUT_FILE} ---"
 
     echo "Downloading ${REMOTE_URL} to ${LOCAL_PATH}..."
-    curl -sfL "$REMOTE_URL" -o "$LOCAL_PATH"
+    curl -L "$REMOTE_URL" -o "$LOCAL_PATH"
+    CURL_EXIT_CODE=$?
 
+    if [ $CURL_EXIT_CODE -ne 0 ]; then
+        echo "Error: curl failed to download ${REMOTE_URL} with exit code ${CURL_EXIT_CODE}. Check connection or URL."
+        exit 1
+    fi
+    
     if [ -f "$LOCAL_PATH" ] && [ -s "$LOCAL_PATH" ]; then
         echo "Compiling ${INPUT_FILE} to release/${OUTPUT_FILE}..."
         "$SRSC_PATH" compile -i "$LOCAL_PATH" -o "release/${OUTPUT_FILE}" -t domain
