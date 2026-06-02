@@ -1,5 +1,5 @@
 #!name=top_priority
-#!desc=Rules:5 LastUpdated:2026-06-03
+#!desc=Rules:5 Created:2026-06-03
 
 [Rule]
 DOMAIN,dl.google.com,PROXY
