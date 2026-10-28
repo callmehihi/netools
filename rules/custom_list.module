@@ -8,3 +8,6 @@ DOMAIN,www.gstatic.com,PROXY
 DOMAIN,fonts.googleapis.com,PROXY
 DOMAIN,fonts.gstatic.com,PROXY
 DOMAIN-SUFFIX,xpowers.net,DIRECT
+DOMAIN-SUFFIX,dounanyun.com,DIRECT
+DOMAIN-SUFFIX,timingswim.com,DIRECT
+DOMAIN-SUFFIX,jmzawushe.com,DIRECT
