@@ -1,5 +1,5 @@
 #!name=custom_list
-#!desc=Rules:9 Updated:2026-10-28
+#!desc=Rules:10 Updated:2026-10-31
 
 [Rule]
 DOMAIN,dl.google.com,PROXY
@@ -11,3 +11,4 @@ DOMAIN-SUFFIX,xpowers.net,DIRECT
 DOMAIN-SUFFIX,dounanyun.com,DIRECT
 DOMAIN-SUFFIX,timingswim.com,DIRECT
 DOMAIN-SUFFIX,jmzawushe.com,DIRECT
+DOMAIN-SUFFIX,topuoo.com,DIRECT
