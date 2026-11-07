@@ -1,5 +1,5 @@
 #!name=custom_list
-#!desc=Rules:10 Updated:2026-10-31
+#!desc=Rules:15 Updated:2026-11-07
 
 [Rule]
 DOMAIN,dl.google.com,PROXY
@@ -12,3 +12,8 @@ DOMAIN-SUFFIX,dounanyun.com,DIRECT
 DOMAIN-SUFFIX,timingswim.com,DIRECT
 DOMAIN-SUFFIX,jmzawushe.com,DIRECT
 DOMAIN-SUFFIX,topuoo.com,DIRECT
+DOMAIN-WILDCARD,*pcdn*.biliapi.net,REJECT
+DOMAIN-SUFFIX,mcdn.bilivideo.cn,REJECT
+DOMAIN-SUFFIX,mcdn.bilivideo.com,REJECT
+DOMAIN-SUFFIX,szbdyd.com,REJECT
+DOMAIN-SUFFIX,mountaintoys.cn,REJECT
