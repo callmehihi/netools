@@ -1,5 +1,5 @@
 #!name=custom_list
-#!desc=Rules:15 Updated:2026-11-07
+#!desc=Last Updated:2026-11-18
 
 [Rule]
 DOMAIN,dl.google.com,PROXY
