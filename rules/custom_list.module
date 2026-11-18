@@ -17,3 +17,4 @@ DOMAIN-SUFFIX,mcdn.bilivideo.cn,REJECT
 DOMAIN-SUFFIX,mcdn.bilivideo.com,REJECT
 DOMAIN-SUFFIX,szbdyd.com,REJECT
 DOMAIN-SUFFIX,mountaintoys.cn,REJECT
+DOMAIN-SUFFIX,niomoney.com,DIRECT
